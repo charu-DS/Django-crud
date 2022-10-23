@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <!--_______________________For collapse and view______________________-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  
+  <style>
+      /* Custom style */
+      .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+      }
+      .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+      }
+    </style>
+    <!--________________________For Toggeable tabs__________________________-->
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Faustina:wght@300&family=Gentium+Book+Plus&family=Hind+Siliguri:wght@300&family=PT+Serif&family=Roboto+Mono:wght@300&family=Vollkorn&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+
+        <div class="container py-4">
+            <h4 style="font-family: 'Vollkorn', serif;">Created by Charu Saraswat</h4>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab">Add Employee</a></li>
+                <li><a  href="tables/" style="margin-left:55vw"> Back to Manage Employee</a></li>
+              </ul>
+              <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                  <h5 style="color: blue; margin-left:1p4x;">Personal Details</h5>
+                        {% for x in emp %}
+                        <!--Row one-->
+                        <div class="row">
+                            <div class="col-sm-3">
+                             <label for="name">First Name </label>
+                             
+                             <input type="text" name="fn" class="form-control" disabled value={{x.fn}}>
+                            
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="mname">Middle Name </label>
+                                <input type="text" name="mn" class="form-control" disabled value={{x.mn}}>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="lname">Last Name </label>
+                                <input type="text" name="ln" class="form-control" disabled value={{x.ln}}>
+                            </div>
+                            <div class="col-sm-2">
+                                <label for="gender" id="name">Gender</label>
+                                
+                                    <input type="text" class="form-control" disabled value={{x.gender}}>
+                            </div>
+                           
+                        <div class="w-100" style="margin-top:20px;"></div>
+                        
+                            <div class="col-sm-3">
+                             <label for="dob">Date of Birth </label>
+                             <div>
+                             <input type="text" name="dob"  class="form-control" disabled value={{x.dob}}></div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="mno">Mobile Number </label>
+                                <input type="number" name="mobileno" class="form-control" disabled value={{x.mobile}}>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="alno">Alternate Number</label>
+                                <input type="number" name="alternateno" class="form-control" disabled value={{x.alternateno}}>
+                            </div>
+                            <div class="col-sm-2">
+                                <label for="alno">Email Id</label>
+                                <input type="email" class="form-control" name="email" disabled value={{x.email}}>
+                            </div>
+                            
+                            <div class="w-100" style="padding-top:20px;"></div>
+
+                            <div class="col-sm-3">
+                                <label for="marital" id="marital">Marital Status</label>
+                                
+                                   
+                                    <input type="text" class="form-control" disabled  value={{x.marital}}>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="bg" id="bg">Blood Group</label>
+                               
+                                    <input type="text" class="form-control" disabled value={{x.bg}}>
+
+                            </div>
+
+                               
+                            </div>
+                        <hr>
+                        </div>
+                    </div>
+                            {% endfor %}
+                        </div>
+
+
+              
+        
+       
+    </body>
+</html>

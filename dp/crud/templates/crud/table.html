@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <!--_______________________For collapse and view______________________-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  
+  <style>
+      /* Custom style */
+      .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+        transform: scale(.7) !important;
+      }
+      .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+      }
+    </style>
+    <!--________________________For Toggeable tabs__________________________-->
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+  <link href="https://fonts.googleapis.com/css2?family=Faustina:wght@300&family=Gentium+Book+Plus&family=Hind+Siliguri:wght@300&family=PT+Serif&family=Roboto+Mono:wght@300&family=Vollkorn&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+      <div class="container py-4">
+        <h4 style="font-family: 'Vollkorn', serif;">Created by Charu Saraswat</h4>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab">Employee</a></li>
+            <li><a  href="crudop" style="margin-left:60vw; padding: 10px 20px; padding-bottom: 5px; border-radius: 6px; color: white; background-color:rgb(0,191,255);"> Add Employee</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="container py-4">
+            <div id="home" class="tab-pane fade in active">
+                
+                  <table class="table" style="border: 1px solid black;
+                  border-collapse: collapse; text-align:center;" >
+                    <thead>
+                      <tr>
+                        <th style="border: 1px solid black; text-align:center;">View </th>
+                        <th style="border: 1px solid black; text-align:center;">#</th>
+                        <th style="border: 1px solid black; text-align:center;">Employee Name</th>
+                        <th style="border: 1px solid black; text-align:center;">Employee Contact #</th>
+                        <th style="border: 1px solid black; text-align:center;">Email Id</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for x in emp %}
+                      <tr style="border: 1px solid black;">
+                    <th style="border: 1px solid black;  text-align:center;" scope='row'{{forloop.counter}}>
+                      <a href="view/">  <i class="fa fa-eye" href="view/" style="color: blue;"></i> </a></th>
+                        <th style="border: 1px solid black; text-align:center;" scope='row'>{{forloop.counter}}</th>
+                        <td style="border: 1px solid black;">{{x.fn}}</td>
+                        <td style="border: 1px solid black;">{{x.mobile}}</td>
+                        <td style="border: 1px solid black;">{{x.email}}</td>
+
+                      </tr>
+                      {% endfor %}
+                    
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
